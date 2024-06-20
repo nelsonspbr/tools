@@ -1,0 +1,26 @@
+alias ls='ls --color=auto'
+alias l='ls --color'
+alias ls='ls -FGh --color'
+alias ll='ls -l --color'
+alias la='ls -a --color'
+alias lla='ls -la --color'
+alias lls='ll'
+alias ltr='ls -tr'
+alias lltr='ls -ltr'
+
+alias grep='grep --color'
+alias tree='tree -C'
+
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s histappend
+shopt -s checkwinsize
+shopt -u progcomp
+
+export PS1="\[\e[34m\]\u\[\e[00m\]@\[\e[35m\]\h\[\e[00m\] \[\e[33m\]\W\[\e[00m\]$ "
+
+conda_dir=${HOME}/miniconda3
+function conda-hook {
+  eval "$(${conda_dir}/bin/conda shell.bash hook)"
+}
